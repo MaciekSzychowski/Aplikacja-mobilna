@@ -8,9 +8,9 @@ data class User(
     var dawki: List<Dawka>?=null
 )
 data class Dawka(
-    var data:com.google.firebase.Timestamp? = null,
+    var data:com.google. firebase.Timestamp? = null,
     var dawka: Double=0.0
-): Parcelable{
+): Parcelable{                                                                          // co to robi
     constructor(parcel:Parcel):this(
         parcel.readParcelable(com.google.firebase.Timestamp.javaClass.classLoader)!!,
         parcel.readDouble()

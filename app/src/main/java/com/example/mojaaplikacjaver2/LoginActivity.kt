@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
                         }else{
                             Toast.makeText(
                                 baseContext,
-                                "Logowanie nie udane",
+                                "Logowanie nieudane",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }

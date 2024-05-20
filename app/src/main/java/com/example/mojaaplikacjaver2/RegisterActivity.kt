@@ -52,7 +52,7 @@ class RegisterActivity : AppCompatActivity() {
                           } else {
                               Toast.makeText(
                                   baseContext,
-                                  "Rejestracja nie udana",
+                                  "Rejestracja nieudana",
                                   Toast.LENGTH_SHORT
                               ).show()
                           }

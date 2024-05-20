@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         val firebaseUser=auth.currentUser
         val uid=firebaseUser?.uid   // odczytujemy jakie id ma zalogowany user
 
-        val db= Firebase.firestore
+        val db= Firebase.firestore  // inicjowanie CloudFirestore z dokumentacji firebase
         val document=uid?.let { db.collection("users").document(it) }
         document?.let {doc->
             GlobalScope.launch(Dispatchers.IO) {
