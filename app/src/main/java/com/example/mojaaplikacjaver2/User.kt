@@ -4,37 +4,10 @@ import android.os.Parcel
 import android.os.Parcelable
 import java.security.Timestamp
 
-data class User(
+data class User(                                                                        // definiujemy class user, ktora przechowuje inforamcje o pojedynczym uzytkowinu (lista dawek)
     var dawki: List<Dawka>?=null
 )
-data class Dawka(
-    var data:com.google. firebase.Timestamp? = null,
+data class Dawka(                                                                       // clasa dawka, ktora definije przyjeta pojedyncza dawke
+    var data:com.google. firebase.Timestamp? = null,                                // format zapisu daty jakiego uzywa firebase
     var dawka: Double=0.0
-): Parcelable{                                                                          // co to robi
-    constructor(parcel:Parcel):this(
-        parcel.readParcelable(com.google.firebase.Timestamp.javaClass.classLoader)!!,
-        parcel.readDouble()
-    )
-
-    override fun writeToParcel(dest: Parcel, flags: Int) {
-        dest.writeParcelable(data,flags)
-        dest.writeDouble(dawka)
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR: Parcelable.Creator<Dawka>{
-        override fun createFromParcel(source: Parcel): Dawka {
-            return Dawka(source)
-
-
-        }
-
-        override fun newArray(size: Int): Array<Dawka?> {
-            return arrayOfNulls(size)
-        }
-    }
-}
-
+)
